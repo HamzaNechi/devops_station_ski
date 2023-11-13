@@ -19,15 +19,20 @@ pipeline {
             }
         }
 
+        stage('MVN SONARQUBE') {
+             steps {
+                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=hamza'
+             }
+        }
+
+
        }
 
     post {
         success {
-            // Actions à effectuer en cas de succès
             sh 'echo "Success!"'
         }
         failure {
-            // Actions à effectuer en cas d'échec
             sh 'echo "Failure!"'
         }
     }
