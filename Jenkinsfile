@@ -32,6 +32,13 @@ pipeline {
         }
 
 
+        stage('Déploiement dans Nexus') {
+             steps {
+                 sh 'mvn deploy -Dmaven.test.skip=true'
+             }
+        }
+
+
        }
 
     post {
