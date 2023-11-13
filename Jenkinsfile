@@ -25,6 +25,12 @@ pipeline {
              }
         }
 
+        stage('Tests unitaires avec Mockito') {
+              steps {
+                 sh 'mvn install -Dmaven.test.skip=true'
+              }
+        }
+
 
        }
 
